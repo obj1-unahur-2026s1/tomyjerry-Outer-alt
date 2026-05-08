@@ -63,3 +63,20 @@ describe "Grupo de test" {
   }
 } 
 
+test "test 6" {
+  //Jerry tiene 50 de energia,puede cazar a Jerry a 38 metros de distancia, pero no cuando esta a 80 metros de distancia
+
+    assert.that(tom.puedeCazar_ACierta_(jerry, 38))
+    assert.notThat(tom.puedeCazar_ACierta_(jerry, 80))
+}
+
+test "test 7"{
+  //Tom puede cazar a 50 metros, pero no a 105 metros después de comerse a Jerry (tiene 102 de energia)
+    tom.comerUnRaton(jerry)
+  
+    assert.equals(102, tom.energia())
+    assert.that(tom.puedeCazar_ACierta_(jerry, 50))
+    assert.notThat(tom.puedeCazar_ACierta_(nibbles, 105))
+
+}
+
